@@ -1,5 +1,8 @@
 get '/' do
-  # La siguiente linea hace render de la vista 
-  # que esta en app/views/index.erb
+  @notlog = params[:notlog]
   erb :index
+end
+
+get '/signup' do
+  erb :signup
 end
