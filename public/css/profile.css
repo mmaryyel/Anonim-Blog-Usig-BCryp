@@ -1,0 +1,43 @@
+
+ .derecha{
+    width: 40%;
+    height: 100%;
+    background-color: red;
+    display: block;
+    position: relative;
+    padding-right: 0; 
+display: inline-block;
+margin: 0;
+
+}
+div.form-style-7{
+    width: 50%;
+
+}
+
+.form-style-7{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+.form-style-7 h1{
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+
+ .izquierda{
+    width: 40%;
+    height: 100%;
+    background-color: blue;
+  display:  inline-block;
+    margin: 0;
+
+
+}
