@@ -1,12 +1,77 @@
+<div class="row">
+  <div class="col-md-3 color1 text-center">
+    <h1><%= current_user.name %></h1>
+    <img src="http://www.usanetwork.com/sites/usanetwork/files/styles/420x420/public/suits_cast_rachel.jpg?itok=tTdWthXF" class="img-responsive avatar" />
+  </div>
+  <div class="col-md-9 color2">
 
-  <div class="derecha right"> 
-  <div class="col-md-6">.col-md-6</div>
-    <h1>NOMBRE DEL USUARIO</h1>
-    <img src="https://s-media-cache-ak0.pinimg.com/736x/e6/ec/8c/e6ec8cb3da432fa2a83928f3e95a883f.jpg" />
- </div>
+    <br>
+  
+    <p>Que quieres postear:</p>
 
- <div class="izquierda left"> 
-  <div class="col-md-6">.col-md-6</div>
-    <h1>NOMBRE DEL USUARIO</h1>
-    <img src="https://s-media-cache-ak0.pinimg.com/736x/e6/ec/8c/e6ec8cb3da432fa2a83928f3e95a883f.jpg" />
- </div>
+      <form  class="feedburner-box" action='/create_post' method="post">
+          <input type="text" placeholder="title" name="title">
+          <br>
+          <br>
+          <textarea rows="6" cols="100" name="post" placeholder="Escribe tu post aquí"></textarea>
+          <br>
+          <br>
+          <p>Recuerda separar tus tags sólo con un espacio</p> 
+          <input type="text" name="tags" placeholder="tags"> 
+          <br>
+           
+          <!-- <input type="checkbox" name="tags" value="tags"> -->
+          <br>
+          <input type="submit" value="post-it"> 
+
+
+      </form>
+   </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 color3">
+    <h1 class="text-center">All of your posts</h1>
+    <div class="form-style-8">
+    <% @user_post.each do |post|%>
+     <fieldset>
+      <!-- EDITA EL POST -->
+       <a href='/posts/<%="#{post.id}"%>/edit'>
+       <p>edit</p>
+       </a>
+
+      <h2>
+        <a href='/posts/<%="#{post.id}"%>'>
+        <%= post.title %>
+        </a>
+      </h2>
+      <p><%= post.description %></p>
+      <% post.tags.each do |tag|%>
+        <span class="pull-right">
+          <a href='/same_tags/<%="#{tag.id}"%>'>
+            <%= tag.name%>&nbsp;
+          </a>
+        </span>
+      <% end %>
+      </fieldset>
+      
+    <% end %>
+    </div>
+      
+   
+  </div>
+
+</div>
+<form class="out" action="/logout" method="POST">
+    <input type="submit" value="Log Out!" />
+  </form>
+
+ 
+
+
+
+
+
+
+

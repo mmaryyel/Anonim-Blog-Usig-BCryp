@@ -1,0 +1,17 @@
+<h2>
+<%= @post.title %>
+</h2>
+<p><%= @post.description %></p>
+<% @post.tags.each do |tag|%>
+  <span class="pull-right">
+  <a href='/same_tags/<%="#{tag.id}"%>'>
+  <%= tag.name%>&nbsp;
+  </a>
+  </span>
+  <%end%>
+  <a href='/users/<%=current_user.id%>'>
+    <!-- falta hacer un boton de regreso al
+    perfil
+    -->
+    <p>go back to profile</p>
+  </a>

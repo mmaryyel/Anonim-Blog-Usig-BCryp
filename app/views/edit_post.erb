@@ -1,0 +1,21 @@
+  <form  class="feedburner-box" action="/posts/<%=@post.id%>" method="post">
+          <input type="text" placeholder="title" name="title" value="<%= @post.title%>">
+
+          <br>
+          <br>
+          <textarea rows="6" cols="100" name="description" placeholder="Escribe tu post aquí"><%=@post.description%></textarea>
+          <br>
+          <br>
+          <p>Recuerda separar tus tags sólo con un espacio</p>  
+          <%@post.tags.each_with_index do |tag, index| %>
+            <input type="text" name="post[tag_<%=index + 1%>]" value="<%=tag.name%>">
+          <%end%>
+
+          <br>
+           
+          <!-- <input type="checkbox" name="tags" value="tags"> -->
+          <br>
+          <input type="submit" value="Update"> 
+
+
+  </form>
