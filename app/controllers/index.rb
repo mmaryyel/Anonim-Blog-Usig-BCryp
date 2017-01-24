@@ -13,25 +13,19 @@ get '/signup' do
   erb :signup
 end
 
-get '/users/:id' do
-    @user = User.find(params[:id])
-    #regresa todas las urls del usuario
-    
-    erb :profile
-end
 
 
 post '/profile' do
-  puts "INSIDE PROFILE"
+  #puts "INSIDE PROFILE"
   p params[:password]
   p params[:email]
 
   if params[:password] == nil && params[:email] == nil
-    puts "INSIDE IF"
+   # puts "INSIDE IF"
     redirect to ('/')
 
   else 
-    puts "INSIDE ELSE"
+    #puts "INSIDE ELSE"
     user = User.authenticate(params[:email], params[:password]) 
     p user
     puts " SESSION ID ANTES #{session[:id]}"
