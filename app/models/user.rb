@@ -11,3 +11,6 @@ class User < ActiveRecord::Base
       user.password === password ? user : nil
     end
 end
+
+
+
