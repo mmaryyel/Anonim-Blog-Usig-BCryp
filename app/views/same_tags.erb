@@ -1,14 +1,23 @@
-posts with this tag: <%= @tag.name %>
-
+<div class="form-style-12">
+<h1>
+posts with this tag: 
+<br>
+<%= @tag.name %>
+</h1>
 <% @posts.each do |post| %>
 
-  <h1>
+
+  
   <a href='/posts/<%="#{post.id}"%>'>
-  <%= post.title %>
+  <p> * <%= post.title %></p>
   </a>
-  </h1>
-
+ 
 <%end%>
-
+ <a href='/users/<%=current_user.id%>'>
+    <!-- falta hacer un boton de regreso al
+    perfil
+    -->
+    <h1>go back to profile</h1>
+  </a>
 
 

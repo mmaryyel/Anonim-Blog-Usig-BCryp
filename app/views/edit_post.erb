@@ -1,3 +1,6 @@
+  <div class="form-style-9">
+  
+  <h1>Post editing</h1>
   <form  class="feedburner-box" action="/posts/<%=@post.id%>" method="post">
           <input type="text" placeholder="title" name="title" value="<%= @post.title%>">
 
@@ -6,9 +9,10 @@
           <textarea rows="6" cols="100" name="description" placeholder="Escribe tu post aquí"><%=@post.description%></textarea>
           <br>
           <br>
-          <p>Recuerda separar tus tags sólo con un espacio</p>  
+          <p>Recuerda que no puedes agregar mas tags, solo podras editarlos.</p>  
           <%@post.tags.each_with_index do |tag, index| %>
-            <input type="text" name="post[tag_<%=index + 1%>]" value="<%=tag.name%>">
+            <!-- <input type="text" name="post[tag_<%#=index + 1%>]" value="<%#=tag.name%>"> -->
+            <input type="text" name="post[<%= tag.name %>]" value="<%=tag.name%>">
           <%end%>
 
           <br>
@@ -19,3 +23,5 @@
 
 
   </form>
+  
+  </div>

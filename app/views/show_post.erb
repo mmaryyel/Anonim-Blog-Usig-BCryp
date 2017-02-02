@@ -1,17 +1,25 @@
-<h2>
+<div class="form-style-10">
+<h1>
 <%= @post.title %>
-</h2>
-<p><%= @post.description %></p>
+<br>
 <% @post.tags.each do |tag|%>
   <span class="pull-right">
-  <a href='/same_tags/<%="#{tag.id}"%>'>
-  <%= tag.name%>&nbsp;
+  <a class="tag-size" href='/same_tags/<%="#{tag.id}"%>'>#
+   <%=tag.name%>&nbsp;
   </a>
   </span>
   <%end%>
-  <a href='/users/<%=current_user.id%>'>
+</h1>
+
+
+
+<p><%= @post.description %></p>
+
+  <a class="go-back-to-profile" href='/users/<%=current_user.id%>'>
     <!-- falta hacer un boton de regreso al
     perfil
     -->
-    <p>go back to profile</p>
+    <h1>go back to profile</h1>
   </a>
+  
+</div>
