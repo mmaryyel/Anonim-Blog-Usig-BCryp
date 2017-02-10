@@ -1,5 +1,6 @@
 source :rubygems
-
+#Agregamos la gema BCryp para poder cifrar el password
+gem 'bcrypt'
 # PostgreSQL driver
 gem 'pg'
 

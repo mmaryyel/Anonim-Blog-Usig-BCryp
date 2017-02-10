@@ -5,7 +5,6 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
-# Require gems we care about
 require 'rubygems'
 
 require 'uri'
@@ -14,6 +13,8 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
+#agregamos la gema Bcryp para poder cifrar el password
+require 'bcrypt'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
